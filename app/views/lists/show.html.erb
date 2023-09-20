@@ -1,15 +1,13 @@
 <p><%= @list.name %></p>
 <ul>
 <% @list.bookmarks.each do |bookmark| %>
-  <h2><%= bookmark.comment %></h2></li>
-  <%= link_to "Delete", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete?"}  %>
-  <% end %>
-</ul>
-
-<ul>
-<% @list.movies. each do |movie| %>
-  <li><%= movie.title %></li>
+  <div class="movie-card">
+    <h2><%= bookmark.comment %></h2>
+    <p><%= @movies.find(bookmark.movie_id).title %></p>
+    <%= link_to "Delete", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete?"}  %>
+  </div>
   <% end %>
 </ul>
 
 <%= link_to "Add a new bookmark", new_list_bookmark_path(@list) %>
+<%= link_to "Return to homepage", lists_path %>

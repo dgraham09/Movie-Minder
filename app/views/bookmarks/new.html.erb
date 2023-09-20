@@ -1,6 +1,23 @@
-<h1>New Bookmark</h1>
-<%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.input :comment %>
-  <%= f.association :movie %>
-  <%= f.submit %>
-<% end %>
+<div class="d-flex flex-row" data-controller="search" data-search-api-key-value=<%= ENV['MOVIE_API_KEY'] %>>
+  <div class="bookmark-form">
+    <h1>New Bookmark</h1>
+    <div>
+      <%= simple_form_for [@list, @bookmark] do |f| %>
+        <%= f.input :comment  %>
+        <%= f.simple_fields_for :movie do |a| %>
+        <%= a.input :title, input_html: { data: {action: "keydown->search#searchMovies", search_target:"input"} } %>
+        <%= a.input :overview, placeholder: "What did you think about this film?" %>
+        <%= a.input :rating %>
+        <% end %>
+        <%= f.submit "Add bookmark" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="flex-grow-1">
+  <h1 class="ms-5 mt-5" id="search-result-title">Search results</h1>
+    <ul id="results"
+    data-search-target="results"
+    class="resultsList mt-3"
+    >
+  </div>
+</div>

@@ -27,6 +27,21 @@
 
 }
 
+ul {
+  list-style: none;
+  margin-left: none;
+}
+
 nav {
-  height: 10vh;
+  height: 15vh;
+}
+
+nav h1 {
+  font-size: 4em;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Bebas Neue'
 }

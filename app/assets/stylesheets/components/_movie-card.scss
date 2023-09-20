@@ -1,0 +1,12 @@
+.resultsList li {
+  display: inline;
+}
+
+.resultsList img {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.resultsList img:hover {
+  filter: brightness(50%)
+}
