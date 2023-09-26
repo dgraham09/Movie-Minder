@@ -10,3 +10,29 @@
 .resultsList img:hover {
   filter: brightness(50%)
 }
+
+
+.movie-card {
+  border: 2px solid black;
+  padding: 3em;
+  margin: 1.5em;
+  background-color: black;
+  box-shadow: 0 0 7px rgb(250, 217, 0);
+}
+
+.movie-card h1,
+.movie-card h2,
+.movie-card p,
+.list-title {
+  color: rgb(250, 217, 0);
+}
+
+
+.bookmark-list-container li {
+  display: inline-block;
+}
+
+.bookmark-list-container ul {
+  margin: 0;
+  padding-left: 0;
+}

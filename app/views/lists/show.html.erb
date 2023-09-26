@@ -1,13 +1,19 @@
-<p><%= @list.name %></p>
-<ul>
-<% @list.bookmarks.each do |bookmark| %>
-  <div class="movie-card">
-    <h2><%= bookmark.comment %></h2>
-    <p><%= @movies.find(bookmark.movie_id).title %></p>
-    <%= link_to "Delete", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete?"}  %>
-  </div>
-  <% end %>
-</ul>
 
-<%= link_to "Add a new bookmark", new_list_bookmark_path(@list) %>
-<%= link_to "Return to homepage", lists_path %>
+<div class="bookmark-list-container d-flex flex-column align-items-start bg-dark">
+  <h1 class="list-title m-4"><%= @list.name %></h1>
+  <ul>
+    <% @list.bookmarks.each do |bookmark| %>
+    <li>
+      <div class="movie-card">
+        <h2><%= bookmark.comment %></h2>
+        <p><%= @movies.find(bookmark.movie_id).title %></p>
+        <%= link_to "Delete", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete?"}, class:"btn btn-danger"  %>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+  <div class="ms-4">
+    <button class="button m-1"><%= link_to "Add a new bookmark", new_list_bookmark_path(@list), class:"text-decoration-none" %></button>
+    <button class="button m-2"><%= link_to "Return to homepage", lists_path, class:"text-decoration-none" %></button>
+  </div>
+</div>

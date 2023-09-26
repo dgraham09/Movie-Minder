@@ -1,0 +1,13 @@
+<div class="d-flex flex-column align-items-center">
+  <div class="card list-card my-2 flex-row justify-content-around align-items-center">
+    <% if list.photo.attached? %>
+      <%= cl_image_tag list.photo.key, width: 200, height: 200, crop: :fill, class: "rounded p-3" %>
+    <% else %>
+      <p>You haven't uploaded an image</p>
+    <% end %>
+    <div class="d-flex flex-column flex-grow-1 align-items-end">
+      <h3><%= list.name %></h3>
+      <button class="my-3 button"><%= link_to "See more", list_path(list), class: "text-decoration-none"%></button>
+      <button class="btn btn-danger text-decoration-none"><%= link_to "Delete", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none color text-light btn-lg" %></button>
+    </div>
+  </div>
