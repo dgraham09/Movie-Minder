@@ -16,7 +16,30 @@
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 7px rgb(250, 217, 0);
+}
+
+.list-card {
+  background-color: black !important;
+  border: 2px solid rgb(250, 217, 0);
+}
+
+.list-card:hover {
+  box-shadow: 0 0 12px rgb(250, 217, 0);
+  cursor: pointer;
+  filter: brightness(120%);
+}
+
+.list-card h3 {
+  color: rgb(250, 217, 0);
+}
+
+.futureCard-container {
+  background-color: black !important;
+}
+
+.futureCard-container h1 {
+  color: rgb(250, 217, 0)
 }
 
 .futureCard {
@@ -28,10 +51,11 @@
   align-items: center;
   color: black;
   font-size: 24px;
+  background-color: black;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 7px rgb(250, 217, 0);
   text-align: center;
 }
 
@@ -39,6 +63,10 @@
   height: auto;
   max-width: 100%;
   border-radius: 5px;
+}
+
+.futureCard p {
+  color: rgb(250, 217, 0)
 }
 
 .btn {

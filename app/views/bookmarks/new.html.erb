@@ -1,4 +1,4 @@
-<div class="d-flex flex-row" data-controller="search" data-search-api-key-value=<%= ENV['MOVIE_API_KEY'] %>>
+<div class="d-flex flex-row bg-dark form-container" data-controller="search" data-search-api-key-value=<%= ENV['MOVIE_API_KEY'] %>>
   <div class="bookmark-form">
     <h1>New Bookmark</h1>
     <div>
@@ -9,7 +9,7 @@
         <%= a.input :overview, placeholder: "What did you think about this film?" %>
         <%= a.input :rating %>
         <% end %>
-        <%= f.submit "Add bookmark" %>
+        <%= f.submit "Add bookmark", class: "button" %>
       <% end %>
     </div>
   </div>

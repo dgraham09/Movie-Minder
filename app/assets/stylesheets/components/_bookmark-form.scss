@@ -1,15 +1,35 @@
+.form-container h1 {
+  color: rgb(250, 217, 0)
+}
+
 .bookmark-form {
   margin: 3em;
   margin-left: 5em;
-  min-width: 21.5em;
-  min-height: 30em;
+  min-width: 30.5em;
+  max-height: 35em;
   box-sizing: border-box;
-  border: 2px solid black;
   padding: 2em;
   border-radius: 8px;
+  background-color: black;
+  border: 2px solid rgb(250, 217, 0);
+  box-shadow: 0 0 7px rgb(250, 217, 0);
+  color: rgb(250, 217, 0);
+}
+
+.bookmark-form label,
+.bookmark-form h1,
+.bookmark-form ::placeholder {
+  color: rgb(250, 217, 0);
+}
+
+.bookmark-form input,
+.bookmark-form input:focus {
+  background-color: black;
+  color: rgb(250, 217, 0);
+  border: 1px solid rgb(250, 217, 0)
 }
 
 #search-result-title {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid rgb(250, 217, 0);
   display: none;
 }

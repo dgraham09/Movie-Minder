@@ -7,7 +7,7 @@ class ListsController < ApplicationController
   def index
     today = Time.new
     api_key = "5eb2852848f013dccdd6edab04d61358"
-    url = URI("https://api.themoviedb.org/3/discover/movie?language=en-US&page=1&primary_release_date.gte=#{today.strftime("20%y-%m-%d")}&primary_release_date.lte=#{today.year}-12-31")
+    url = URI("https://api.themoviedb.org/3/discover/movie?include_adult=false&language=en-US&page=1&primary_release_date.gte=#{today.strftime("20%y-%m-%d")}&primary_release_date.lte=#{today.year}-12-31")
 
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
