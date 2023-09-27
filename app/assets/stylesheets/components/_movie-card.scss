@@ -36,3 +36,19 @@
   margin: 0;
   padding-left: 0;
 }
+
+.movie-item {
+  position: relative;
+}
+
+.info-button {
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  display: none;
+  left: 85px;
+}
+
+.movie-item:hover .info-button {
+  display: block
+}
