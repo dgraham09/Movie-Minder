@@ -21,22 +21,16 @@
     >
   </div>
   <div class="modal" tabindex="-1" id="movieModal" data-search-target="movie">
+  <div class="backdrop"></div>
       <div class="modal-dialog">
         <div class="modal-content bg-dark">
-          <div class="modal-header">
-            <h5 class="modal-title">Modal title</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-header d-flex justify-content-around align-items-center">
+              <h4 class="modal-title">Modal title</h4>
+              <h4 class="modal-rating"></h4>
           </div>
-          <div class="modal-body">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis eveniet, incidunt temporibus sunt soluta tenetur consectetur dolore quisquam totam libero pariatur esse ducimus, animi praesentium voluptatem repellat. Facilis, ad minus.
-
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum architecto amet perferendis fuga recusandae? Deserunt fuga minima, pariatur ad nesciunt sapiente eaque voluptatum minus ipsam voluptates, quaerat cumque rerum adipisci.
-
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita adipisci cupiditate corporis est incidunt placeat, similique accusamus labore sunt aspernatur earum! Quibusdam reprehenderit pariatur fugiat culpa commodi? Rerum, non labore.</p>
-          </div>
+          <div class="modal-body" id="typed-strings"></div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="close-button" data-bs-dismiss="modal" data-action="click->search#closeModal">Close</button>
           </div>
         </div>
       </div>

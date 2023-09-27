@@ -80,5 +80,6 @@ group :development do
   # gem "spring"
 end
 
+gem "typedjs-rails", "~> 2.0.9"
 gem 'rspec-rails', group: [ :test ]
 gem 'rails-controller-testing', group: [ :test ]
