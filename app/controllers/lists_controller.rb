@@ -23,9 +23,7 @@ class ListsController < ApplicationController
     @upcoming_movies = movie_titles.sort_by { |i| Date.parse i[:date] }.last(20).uniq
     @lists = List.all
     @lists.each do |list|
-      p list.id
-      @rating = calculate_average_rating(list.id)
-      p @rating
+      list.average_rating = calculate_average_rating(list.id)
     end
   end
 
@@ -52,7 +50,7 @@ class ListsController < ApplicationController
   end
 
   def calculate_average_rating(list_id)
-    ((Bookmark.joins(:movie).where(list_id: list_id).pluck(:rating)).sum / (Bookmark.joins(:movie).where(list_id: list_id).pluck(:rating).size)).round
+    ((Bookmark.joins(:movie).where(list_id: list_id).pluck(:rating).sum) / (Bookmark.joins(:movie).where(list_id: list_id).pluck(:rating).size)).round
   end
 
   def list_params
