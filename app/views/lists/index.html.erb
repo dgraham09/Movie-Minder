@@ -1,14 +1,15 @@
 <div class="d-flex flex-row justify-content-around bg-dark ">
   <ul class="mt-3">
+  <div class="list-header">
+    <h1>Your movie lists</h1>
+    <%= link_to "Add a new list", new_list_path, class: "btn btn-flat btn-success btn-lg" %>
+  </div>
     <% @lists.each do |list| %>
       <%= render partial: "list_card", locals: {list: list} %>
     <% end %>
 </div>
   </ul>
     <div class="card mt-4 mx-5 d-flex flex-column justify-content-start futureCard-container">
-      <div class="mb-4">
-        <%= link_to "Add a new list", new_list_path, class: "btn btn-flat btn-success btn-lg" %>
-      </div>
       <div>
         <h1>Upcoming movies</h1>
       </div>

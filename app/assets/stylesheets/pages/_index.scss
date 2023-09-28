@@ -11,7 +11,6 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  color: white;
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
@@ -19,9 +18,20 @@
   box-shadow: 0 0 7px rgb(250, 217, 0);
 }
 
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  color: rgb(250, 217, 0);
+}
+
+
 .list-card {
   background-color: black !important;
   border: 2px solid rgb(250, 217, 0);
+}
+
+.list-card * {
+  color: rgb(250, 217, 0);
 }
 
 .list-card:hover {

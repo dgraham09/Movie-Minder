@@ -22,6 +22,11 @@ class ListsController < ApplicationController
       dataArray.each { |element| movie_titles.push({ title: element["title"], date: convert_date(element["release_date"]), poster: element["poster_path"]}) }
     @upcoming_movies = movie_titles.sort_by { |i| Date.parse i[:date] }.last(20).uniq
     @lists = List.all
+    @lists.each do |list|
+      p list.id
+      @rating = calculate_average_rating(list.id)
+      p @rating
+    end
   end
 
   def show
@@ -46,6 +51,9 @@ class ListsController < ApplicationController
     redirect_to lists_path
   end
 
+  def calculate_average_rating(list_id)
+    ((Bookmark.joins(:movie).where(list_id: list_id).pluck(:rating)).sum / (Bookmark.joins(:movie).where(list_id: list_id).pluck(:rating).size)).round
+  end
 
   def list_params
     params.require(:list).permit(:name, :photo)
