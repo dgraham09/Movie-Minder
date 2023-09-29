@@ -23,7 +23,7 @@ export default class extends Controller {
       this.resultsTarget.innerHTML = ''
       data.results.forEach((result) => {
         const movieTag = `
-        <li class="movie-item" data-movie-name="${result.title}" data-movie-overview="${result.overview}" data-rating="${result.vote_average}">
+        <li class="movie-item" data-movie-name="${result.title}" data-movie-overview="${result.overview}" data-movie-id="${result.id}" data-rating="${result.vote_average}">
             <img src=https://image.tmdb.org/t/p/w500${result.poster_path} style="width: 300px; height: 400px; border-radius: 15px; padding:0.2em; margin: 0.25rem">
             <button class="info-button" data-action="click->search#openModal">Learn more</button>
             </li>
@@ -34,22 +34,36 @@ export default class extends Controller {
 
       }
 
-  openModal() {
+  openModal(e) {
     const modal = document.getElementById("movieModal")
-    const movieItem = document.querySelector(".movie-item")
-    const typed = new Typed(modal.querySelector(".modal-body"), {
-      strings:[`"${movieItem.dataset.movieOverview}`],
-      typeSpeed: 15,
-      showCursor: false,
+    const movieItem = e.currentTarget.closest(".movie-item")
+    const movieId = movieItem.dataset.movieId
+    fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${this.apiKeyValue}`)
+    .then(response => response.json())
+    .then((data) =>{
+      modal.querySelector(".modal-title").textContent = data.title
+      modal.querySelector(".modal-rating").textContent = `${Math.round(data.vote_average)} / 10`
+      const typed = new Typed(modal.querySelector(".modal-body"), {
+        strings:[`"${data.overview}^1000`],
+        typeSpeed: 10,
+        backSpeed: 0,
+        showCursor: false,
+        fadeOut: true,
+        fadeOutDelay: 0,
+      })
+      modal.style.display = "block"
     })
-    modal.querySelector(".modal-title").textContent = movieItem.dataset.movieName
-    modal.querySelector(".modal-rating").textContent = Math.round(movieItem.dataset.rating)
-    modal.style.display = "block"
   }
 
   closeModal() {
     const modal = document.getElementById("movieModal")
     modal.style.display = "none"
+    this.clearModal(modal)
+  }
 
+  clearModal(modal) {
+    modal.querySelector(".modal-title").textContent = ""
+    modal.querySelector(".modal-body").textContent = ""
+    modal.querySelector(".modal-rating").textContent = ""
   }
 }

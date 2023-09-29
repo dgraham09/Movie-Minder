@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsWatchList</title>
+    <title>Movie Minder</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -17,12 +17,12 @@
 
   <body>
     <nav class="d-flex flex-row align-items-center justify-content-around bg-dark">
-        <h1 class="text-center my-3 heading"><%= link_to "Movie Lists", root_path, class: "text-decoration-none" %></h1>
+        <h1 class="text-center my-3 heading"><%= link_to "Movie Minder", root_path, class: "text-decoration-none" %></h1>
         <i class="fa-solid fa-film fa-5x" style="color: #fad900;"></i>
     </nav>
 
     <div class="hero d-flex flex-column justify-content-end align-items-center">
-      <h3 class="mb-5 display-4">Save any kind of movies</h3>
+      <h3 class="display-4">Remember your memorable movies!</h3>
     </div>
     <%= yield %>
   </body>

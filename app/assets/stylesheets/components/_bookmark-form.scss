@@ -1,11 +1,11 @@
 .form-container h1 {
-  color: rgb(250, 217, 0)
+  color: rgb(250, 217, 0);
 }
 
 .bookmark-form {
   margin: 3em;
   margin-left: 5em;
-  min-width: 30.5em;
+  min-width: 26em;
   max-height: 35em;
   box-sizing: border-box;
   padding: 2em;
@@ -17,12 +17,12 @@
 }
 
 .bookmark-form label,
-.bookmark-form h1,
-.bookmark-form ::placeholder {
+.bookmark-form h1 {
   color: rgb(250, 217, 0);
 }
 
 .bookmark-form input,
+.bookmark-form select,
 .bookmark-form input:focus {
   background-color: black;
   color: rgb(250, 217, 0);

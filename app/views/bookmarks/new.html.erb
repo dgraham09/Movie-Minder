@@ -6,8 +6,8 @@
         <%= f.input :comment  %>
         <%= f.simple_fields_for :movie do |a| %>
         <%= a.input :title, input_html: { data: {action: "keydown->search#searchMovies", search_target:"input"} } %>
-        <%= a.input :overview, placeholder: "What did you think about this film?" %>
-        <%= a.input :rating %>
+        <%= a.input :overview %>
+        <%= a.input :rating, collection: 1..10 %>
         <% end %>
         <%= f.submit "Add bookmark", class: "button" %>
       <% end %>
@@ -28,7 +28,9 @@
               <h4 class="modal-title">Modal title</h4>
               <h4 class="modal-rating"></h4>
           </div>
-          <div class="modal-body" id="typed-strings"></div>
+          <div class="modal-body">
+            <div id="typed-strings"></div>
+          </div>
           <div class="modal-footer">
             <button type="button" class="close-button" data-bs-dismiss="modal" data-action="click->search#closeModal">Close</button>
           </div>
