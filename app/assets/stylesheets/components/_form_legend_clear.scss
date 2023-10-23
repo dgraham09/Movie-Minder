@@ -8,3 +8,27 @@
 legend~div.form-check:first-of-type {
   clear: left;
 }
+
+
+.list-form-container {
+  background-color: black;
+  border: 2px solid rgb(250, 217, 0);
+  height: 38vh;
+  box-shadow: 0 0 7px rgb(250, 217, 0);
+  color: rgb(250, 217, 0);
+  padding: 4em;
+  margin: 0 2em 0 2em;
+}
+
+.list-form-container label,
+.bookmark-form h1 {
+  color: rgb(250, 217, 0);
+}
+
+.list-form-container input,
+.list-form-container select,
+.list-form-container input:focus {
+  background-color: black;
+  color: rgb(250, 217, 0);
+  border: 1px solid rgb(250, 217, 0)
+}
